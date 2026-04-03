@@ -107,3 +107,77 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habibcot One Image Website</title>
+    <style>
+        /* পুরো পেজের জন্য স্টাইল */
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* সবকিছু মাঝখানে রাখার জন্য */
+            justify-content: center;
+            min-height: 100vh;
+            color: white;
+            
+            /* ব্যাকগ্রাউন্ড কালার চেঞ্জিং অ্যানিমেশন */
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+            overflow-x: hidden; /* মোবাইল স্ক্রিনে যেন ডানে-বামে না নড়ে */
+        }
+
+        /* ব্যাকগ্রাউন্ড অ্যানিমেশনের নিয়ম */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+
+        /* শুধুমাত্র ১টি ইমেজের স্টাইল */
+        img {
+            max-width: 90%; /* মোবাইলের জন্য রেসপন্সিভ */
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            /* ছবি হালকা ভাসবে ( Floating animation ) */
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        audio {
+            margin-top: 40px;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+        }
+    </style>
+</head>
+<body>
+
+    <h1>habibcot.github.io</h1>
+    
+    <img src="hk.png" alt="My Profile Image">
+
+    <audio controls>
+        <source src="meow-ghop-ghop-ghop.mp3" type="audio/mpeg">
+        আপনার ব্রাউজারটি অডিও সাপোর্ট করে না।
+    </audio>
+
+</body>
+</html>
