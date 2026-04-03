@@ -5,41 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Friends</title>
     
-    <link rel="icon" type="image/jpeg" href="rrp.jpg?v=2.0">
+    <link rel="icon" type="image/jpeg" href="rrp.jpg?v=2.1">
 
     <style>
         :root {
             --bg: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            --container-bg: rgba(255, 255, 255, 0.15);
-            --text-color: white;
-            --accent-color: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.2);
+            --text: white;
         }
 
         [data-theme="dark"] {
             --bg: linear-gradient(-45deg, #121212, #1f1f1f, #2c3e50, #000000);
-            --container-bg: rgba(0, 0, 0, 0.6);
-            --text-color: #ff758c;
-            --accent-color: #00d2ff;
+            --card-bg: rgba(0, 0, 0, 0.6);
+            --text: #ff758c;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            transition: all 0.5s ease;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: 0.5s; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             background: var(--bg);
             background-size: 400% 400%;
             animation: gradientMove 10s ease infinite;
-            color: var(--text-color);
-            overflow-x: hidden;
+            font-family: sans-serif;
+            color: var(--text);
         }
 
         @keyframes gradientMove {
@@ -49,31 +41,24 @@
         }
 
         .main-card {
-            background: var(--container-bg);
+            background: var(--card-bg);
             backdrop-filter: blur(15px);
             padding: 30px;
             border-radius: 25px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             text-align: center;
-            max-width: 400px;
-            width: 90%;
+            width: 350px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
 
-        .profile-frame {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 20px;
-        }
-
-        .profile-frame img {
-            width: 100%;
-            height: 100%;
+        .profile-img {
+            width: 220px;
+            height: 220px;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 15px;
             border: 5px solid white;
-            animation: bounce 3s ease-in-out infinite;
+            margin-bottom: 20px;
+            animation: bounce 3s infinite;
         }
 
         @keyframes bounce {
@@ -81,49 +66,29 @@
             50% { transform: translateY(-10px); }
         }
 
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
-        }
+        h1 { margin-bottom: 10px; letter-spacing: 2px; }
 
-        p {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        [data-theme="dark"] p {
-            color: #ddd;
-        }
-
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-        }
+        p { font-size: 14px; line-height: 1.5; margin-bottom: 20px; opacity: 0.9; }
 
         .music-btn {
             background: white;
             color: #ff3e6c;
             border: none;
-            padding: 12px 30px;
+            padding: 12px 25px;
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 0 auto;
         }
 
         .theme-toggle {
             position: fixed;
             top: 20px;
             right: 20px;
-            background: var(--container-bg);
+            background: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
             width: 50px;
@@ -142,23 +107,17 @@
     <button class="theme-toggle" onclick="toggleTheme()" id="tBtn">🌙</button>
 
     <div class="main-card">
-        <div class="profile-frame">
-            <img src="hk.png" alt="Profile">
-        </div>
-
+        <img src="hk.png" class="profile-img" alt="Profile">
         <h1>FRIENDS</h1>
-
-        <p>ধন্যবাদ আমাদের ওয়েবসাইটে আসার জন্য! আমাদের ওয়েবসাইটটি কারো অপমান বা ছোট করার জন্য তৈরি করা হয়নি। এটি বিনোদনের উদ্দেশ্যে তৈরি।</p>
-
-        <div class="btn-group">
-            <audio id="mySong" loop>
-                <source src="meow-ghop-ghop-ghop.mp3" type="audio/mpeg">
-            </audio>
-            
-            <button class="music-btn" onclick="playMusic()">
-                <span id="icon">▶</span> <span id="text">Play Music</span>
-            </button>
-        </div>
+        <p>ধন্যবাদ আমাদের ওয়েবসাইটে আসার জন্য! এটি সম্পূর্ণভাবে মজা এবং বিনোদনের উদ্দেশ্যে তৈরি।</p>
+        
+        <audio id="mySong" loop>
+            <source src="meow-ghop-ghop-ghop.mp3" type="audio/mpeg">
+        </audio>
+        
+        <button class="music-btn" onclick="playMusic()">
+            <span id="icon">▶</span> <span id="text">Play Music</span>
+        </button>
     </div>
 
     <script>
@@ -178,7 +137,6 @@
             const audio = document.getElementById("mySong");
             const icon = document.getElementById("icon");
             const text = document.getElementById("text");
-            
             if(audio.paused) {
                 audio.play();
                 icon.innerText = "⏸";
