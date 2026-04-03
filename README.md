@@ -16,6 +16,7 @@
             --accent: #ff758c;
         }
 
+        /* ডার্ক মোড কালার সেট */
         [data-theme="dark"] {
             --bg-gradient: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460);
             --text-color: #eee;
@@ -50,6 +51,7 @@
             100% { background-position: 0% 50%; }
         }
 
+        /* ডার্ক মোড সুইচ বাটন */
         .theme-switch {
             position: fixed;
             top: 20px;
@@ -61,6 +63,7 @@
             border: 1px solid rgba(255,255,255,0.3);
             font-size: 1.5rem;
             z-index: 100;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .description-container {
@@ -73,6 +76,7 @@
             text-align: center;
             margin-top: 60px;
             margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .description-container p {
@@ -82,9 +86,17 @@
             font-weight: 500;
         }
 
-        h1 { font-size: 2.5rem; margin-bottom: 20px; text-transform: uppercase; }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-        .photo-frame { width: 280px; margin-bottom: 30px; }
+        .photo-frame {
+            width: 280px;
+            margin-bottom: 30px;
+        }
 
         img.profile-img {
             width: 100%;
@@ -115,22 +127,8 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
-        /* নতুন কাউন্টার স্টাইল */
-        .visitor-counter {
-            margin-top: 40px;
-            padding: 10px 20px;
-            background: var(--box-bg);
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: var(--text-color);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .visitor-counter img {
-            filter: hue-rotate(300deg); /* কাউন্টার কালার চেঞ্জ করার জন্য */
+        .play-music-btn:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
@@ -159,12 +157,8 @@
         <span id="btnIcon">▶</span> <span id="btnText">Play Music</span>
     </button>
 
-    <div class="visitor-counter">
-        <span>👀 Total Visitors</span>
-        <img src="https://counter.secrethelp.workers.dev/redrrox/friend-site" alt="Visitor Counter">
-    </div>
-
     <script>
+        // ডার্ক মোড ফাংশন
         function toggleTheme() {
             const body = document.body;
             const icon = document.getElementById("themeIcon");
@@ -177,10 +171,12 @@
             }
         }
 
+        // মিউজিক কন্ট্রোল ফাংশন
         function playPause() {
             const audio = document.getElementById("bgMusic");
             const txt = document.getElementById("btnText");
             const icon = document.getElementById("btnIcon");
+            
             if (audio.paused) {
                 audio.play();
                 txt.innerText = "Pause Music";
