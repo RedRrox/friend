@@ -59,6 +59,8 @@
             border: 6px solid white;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             margin-bottom: 15px;
+            background: rgba(255,255,255,0.1); /* লোড হওয়ার আগে হালকা বক্স দেখাবে */
+            min-height: 200px;
         }
 
         .play-btn {
@@ -93,8 +95,8 @@
     </div>
 
     <div class="photo-section">
-        <img src="nk.jpg?v=99" alt="Second Photo">
-        <audio id="a2" loop><source src="cid.mp3?v=99" type="audio/mpeg"></audio>
+        <img src="https://raw.githubusercontent.com/RedRrox/friend/main/nk.jpg" alt="Second Photo">
+        <audio id="a2" loop><source src="cid.mp3" type="audio/mpeg"></audio>
         <button class="play-btn" onclick="playMusic('a2', this)">▶ Play Music 2</button>
     </div>
 
@@ -113,6 +115,15 @@
 
         function playMusic(id, btn) {
             const audio = document.getElementById(id);
+            
+            // একটি বাজালে অন্যটি বন্ধ হবে
+            document.querySelectorAll('audio').forEach(m => {
+                if(m.id !== id) {
+                    m.pause();
+                    m.nextElementSibling.innerText = m.id === "a1" ? "▶ Play Music 1" : "▶ Play Music 2";
+                }
+            });
+
             if (audio.paused) {
                 audio.play();
                 btn.innerText = "⏸ Pause Music";
