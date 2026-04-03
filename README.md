@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Friends</title>
     
-    <link rel="icon" type="image/jpeg" href="rrp.jpg?v=3.0">
+    <link rel="icon" type="image/jpeg" href="rrp.jpg">
 
     <style>
         :root {
             --bg-gradient: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
             --text-color: #222;
-            --box-bg: rgba(255, 255, 255, 0.2);
+            --box-bg: rgba(255, 255, 255, 0.25);
             --title-color: white;
         }
 
@@ -63,9 +63,10 @@
 
         .description-container {
             max-width: 550px;
+            width: 95%;
             background: var(--box-bg);
             backdrop-filter: blur(12px);
-            padding: 25px;
+            padding: 20px;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             text-align: center;
@@ -74,56 +75,62 @@
         }
 
         .description-container p {
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1.6;
             color: var(--text-color);
             font-weight: 500;
         }
 
         h1 {
-            font-size: 2.8rem;
-            margin-bottom: 25px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 3px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
         }
 
         .photo-frame {
-            width: 300px;
-            margin-bottom: 40px;
+            width: 320px;
+            max-width: 90%;
+            margin-bottom: 30px;
         }
 
         img.profile-img {
             width: 100%;
             height: auto;
             border-radius: 15px;
-            border: 8px solid white;
+            border: 6px solid white;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            animation: floating 3s ease-in-out infinite;
+            animation: floating 3.5s ease-in-out infinite;
         }
 
         @keyframes floating {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-12px); }
         }
 
         .play-music-btn {
             background: white;
             color: #ff758c;
             border: none;
-            padding: 18px 45px;
-            font-size: 1.2rem;
+            padding: 15px 40px;
+            font-size: 1.1rem;
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
-        .play-music-btn:hover {
-            transform: scale(1.05);
+        .play-music-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* পিসি এবং বড় স্ক্রিনের জন্য অ্যাডজাস্টমেন্ট */
+        @media (min-width: 768px) {
+            h1 { font-size: 3rem; }
+            .description-container p { font-size: 17px; }
         }
     </style>
 </head>
@@ -141,11 +148,11 @@
     <h1>Friends</h1>
 
     <div class="photo-frame">
-        <img src="hk.png" alt="Profile Image" class="profile-img">
+        <img src="nk.jpg" alt="Profile Image" class="profile-img">
     </div>
 
     <audio id="bgMusic" loop>
-        <source src="meow-ghop-ghop-ghop.mp3" type="audio/mpeg">
+        <source src="cid.mp3" type="audio/mpeg">
     </audio>
 
     <button class="play-music-btn" onclick="playPause()">
