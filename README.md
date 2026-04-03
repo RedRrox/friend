@@ -5,124 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Friends Official Site</title>
     <style>
-        /* পুরো পেজের জন্য মেইন ডিজাইন */
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            color: white;
-            /* কালারফুল ব্যাকগ্রাউন্ড অ্যানিমেশন */
-            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            overflow-x: hidden;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* আপনার নতুন নাম: Friends */
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 4px 10px rgba(0,0,0,0.2);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        /* ইমেজ কন্টেইনার এবং ভাসমান অ্যানিমেশন */
-        .image-box {
-            width: 250px;
-            max-width: 80%;
-            margin-bottom: 30px;
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 30px; /* সুন্দর রাউন্ডেড কোণা */
-            border: 8px solid rgba(255, 255, 255, 0.4);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            animation: floating 4s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* অডিও প্লেয়ার ডিজাইন */
-        audio {
-            width: 300px;
-            max-width: 90%;
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
-            border-radius: 50px;
-        }
-
-        /* নিচের ছোট টেক্সট */
-        .footer-text {
-            margin-top: 30px;
-            font-size: 1.2rem;
-            font-weight: 500;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px 25px;
-            border-radius: 30px;
-            backdrop-filter: blur(5px);
-        }
-    </style>
-</head>
-<body>
-
-    <h1>Friends</h1>
-
-    <div class="image-box">
-        <img src="hk.png" alt="Friends Profile">
-    </div>
-
-    <audio controls>
-        <source src="meow-ghop-ghop-ghop.mp3" type="audio/mpeg">
-        আপনার ব্রাউজারটি অডিও সাপোর্ট করে না।
-    </audio>
-
-    <div class="footer-text">Welcome to the world of Friends!</div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Friends Official Site</title>
-    <style>
-        /* মোবাইল অপ্টিমাইজড রিসেট */
         * {
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent; /* মোবাইলে ক্লিকের নীল দাগ সরাতে */
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
             margin: 0;
-            padding: 0;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             min-height: 100vh;
-            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
             color: white;
+            /* ব্যাকগ্রাউন্ড অ্যানিমেশন */
             background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
             background-size: 400% 400%;
             animation: gradientBG 10s ease infinite;
-            overflow: hidden;
         }
 
         @keyframes gradientBG {
@@ -131,18 +31,38 @@
             100% { background-position: 0% 50%; }
         }
 
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            text-shadow: 1px 3px 8px rgba(0,0,0,0.2);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* --- টপ ডিসক্রিপশন বক্স --- */
+        .description-box {
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
-        /* ইমেজ সেকশন */
+        .description-box p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+            color: #333; /* পড়ার সুবিধার জন্য গাঢ় রঙ */
+            font-weight: 500;
+        }
+
+        /* --- মেইন কন্টেন্ট --- */
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0 20px 0;
+            text-transform: uppercase;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+        }
+
         .image-box {
-            width: 220px;
-            height: 220px;
+            width: 180px;
+            height: 180px;
             margin-bottom: 25px;
         }
 
@@ -151,8 +71,8 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 4px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border: 5px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             animation: floating 3s ease-in-out infinite;
         }
 
@@ -162,66 +82,36 @@
         }
 
         /* ফ্যান্সি মিউজিক বাটন */
-        .music-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
         #play-btn {
-            background: rgba(255, 255, 255, 0.9);
+            background: white;
             color: #ff758c;
             border: none;
-            padding: 18px 45px;
+            padding: 15px 40px;
             font-size: 1.1rem;
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             display: flex;
             align-items: center;
-            gap: 12px;
-            transition: transform 0.2s active;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
         }
 
-        /* মোবাইলে চাপ দিলে হালকা ছোট হবে (ক্লিক ইফেক্ট) */
         #play-btn:active {
             transform: scale(0.95);
         }
 
-        /* মিউজিক ওয়েভস */
-        .waves-container {
-            display: flex;
-            align-items: flex-end;
-            height: 25px;
-            gap: 4px;
-            visibility: hidden; /* শুরুতে জায়গা দখল করবে কিন্তু দেখাবে না */
-        }
-
-        .bar {
-            width: 5px;
-            height: 8px;
-            background: white;
-            border-radius: 10px;
-        }
-
-        .playing .bar {
-            animation: wave 0.6s linear infinite;
-        }
-
-        @keyframes wave {
-            0%, 100% { height: 8px; }
-            50% { height: 25px; }
-        }
-
-        .bar:nth-child(2) { animation-delay: 0.1s; }
-        .bar:nth-child(3) { animation-delay: 0.2s; }
-        .bar:nth-child(4) { animation-delay: 0.3s; }
-
     </style>
 </head>
 <body>
+
+    <div class="description-box">
+        <p>
+            ধন্যবাদ আমাদের ওয়েবসাইটে আসার জন্য! <br>
+            আমাদের ওয়েবসাইটটি কারো অপমান বা ছোট করার জন্য তৈরি করা হয়নি। এটি সম্পূর্ণভাবে মজা এবং বিনোদনের উদ্দেশ্যে তৈরি। তাই কেউ এই ওয়েবসাইটকে খারাপভাবে বা নেতিবাচকভাবে দেখবেন না। আমাদের উদ্দেশ্য শুধু হাসি, আনন্দ এবং ভালো সময় উপভোগ করা। ধন্যবাদ!
+        </p>
+    </div>
 
     <h1>Friends</h1>
 
@@ -229,229 +119,15 @@
         <img src="hk.png" alt="Profile">
     </div>
 
-    <div class="music-wrapper">
-        <audio id="myAudio" loop>
-            <source src="meow-ghop-ghop-ghop.mp3" type="audio/mpeg">
-        </audio>
+    <audio id="myAudio" loop>
+        <source src="meow-ghop-ghop-ghop.mp3" type="audio/mpeg">
+    </audio>
 
-        <button id="play-btn" onclick="toggleMusic()">
-            <span id="icon">▶</span> <span id="text">Play Music</span>
-        </button>
-
-        <div class="waves-container" id="waveBox">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-    </div>
+    <button id="play-btn" onclick="toggleMusic()">
+        <span id="icon">▶</span> <span id="text">Play Music</span>
+    </button>
 
     <script>
-        const audio = document.getElementById("myAudio");
-        const btnText = document.getElementById("text");
-        const btnIcon = document.getElementById("icon");
-        const waveBox = document.getElementById("waveBox");
-
-        function toggleMusic() {
-            if (audio.paused) {
-                audio.play().catch(e => {
-                    alert("মোবাইলে অটো-প্লে বন্ধ থাকতে পারে। বাটনে আবার ক্লিক করুন!");
-                });
-                btnText.innerText = "Pause Music";
-                btnIcon.innerText = "⏸";
-                waveBox.style.visibility = "visible";
-                waveBox.classList.add("playing");
-            } else {
-                audio.pause();
-                btnText.innerText = "Play Music";
-                btnIcon.innerText = "▶";
-                waveBox.classList.remove("playing");
-                waveBox.style.visibility = "hidden";
-            }
-        }
-    </script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Friends Official Site</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            color: white;
-            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
-            overflow: hidden;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* --- ডিসক্রিপশন ওভারলে সেকশন --- */
-        #intro-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(15px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            padding: 20px;
-            text-align: center;
-            opacity: 1;
-            visibility: visible;
-            transition: all 0.5s ease-in-out;
-        }
-
-        /* মেইন কন্টেন্ট স্টাইল */
-        .main-content {
-            text-align: center;
-            display: block;
-        }
-
-        .intro-content {
-            max-width: 450px;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .intro-content h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #ff9a9e;
-        }
-
-        .intro-content p {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: #f0f0f0;
-        }
-
-        .enter-btn {
-            background: linear-gradient(45deg, #ff758c, #ff7eb3);
-            color: white;
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
-            display: inline-block;
-            transition: transform 0.2s;
-        }
-
-        .enter-btn:active {
-            transform: scale(0.9);
-        }
-
-        /* ইমেজ ও অন্যান্য */
-        .image-box {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 25px auto;
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            animation: floating 3s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        #play-btn {
-            background: white;
-            color: #ff758c;
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 50px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px auto 0 auto;
-        }
-
-    </style>
-</head>
-<body>
-
-    <div id="intro-overlay">
-        <div class="intro-content">
-            <h2>স্বাগতম!</h2>
-            <p>
-                ধন্যবাদ আমাদের ওয়েবসাইটে আসার জন্য! <br><br>
-                আমাদের ওয়েবসাইটটি কারো অপমান বা ছোট করার জন্য তৈরি করা হয়নি। এটি সম্পূর্ণভাবে মজা এবং বিনোদনের উদ্দেশ্যে তৈরি। তাই কেউ এই ওয়েবসাইটকে খারাপভাবে বা নেতিবাচকভাবে দেখবেন না। আমাদের উদ্দেশ্য শুধু হাসি, আনন্দ এবং ভালো সময় উপভোগ করা। ধন্যবাদ!
-            </p>
-            <button class="enter-btn" onclick="startSite()">ভিতরে প্রবেশ করুন</button>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <h1>Friends</h1>
-        <div class="image-box">
-            <img src="hk.png" alt="Profile">
-        </div>
-        <audio id="myAudio" loop>
-            <source src="meow-ghop-ghop-ghop.mp3" type="audio/mpeg">
-        </audio>
-        <button id="play-btn" onclick="toggleMusic()">
-            <span id="icon">▶</span> <span id="text">Play Music</span>
-        </button>
-    </div>
-
-    <script>
-        // ১. পর্দা সরানোর ফাংশন
-        function startSite() {
-            const overlay = document.getElementById('intro-overlay');
-            overlay.style.opacity = '0';
-            setTimeout(() => {
-                overlay.style.display = 'none';
-            }, 500);
-        }
-
-        // ২. মিউজিক ফাংশন
         const audio = document.getElementById("myAudio");
         const btnText = document.getElementById("text");
         const btnIcon = document.getElementById("icon");
