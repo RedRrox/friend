@@ -468,3 +468,199 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Friends Official Site</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            color: white;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            overflow: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- ডিসক্রিপশন ওভারলে সেকশন --- */
+        #intro-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95); /* একটু গাঢ় করা হয়েছে */
+            backdrop-filter: blur(15px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999; /* সবার উপরে রাখার জন্য */
+            padding: 20px;
+            text-align: center;
+            transition: opacity 0.6s ease, visibility 0.6s;
+        }
+
+        /* বাটন ক্লিক করলে এই ক্লাসটি যোগ হবে */
+        .hidden {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none; /* যাতে আড়ালে থাকলেও ক্লিক না লাগে */
+        }
+
+        .intro-content {
+            max-width: 450px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .intro-content h2 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #ff9a9e;
+        }
+
+        .intro-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #f0f0f0;
+        }
+
+        .enter-btn {
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+            display: inline-block;
+        }
+
+        /* --- মেইন সাইট কন্টেন্ট --- */
+        .main-content {
+            text-align: center;
+        }
+
+        .image-box {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 25px auto;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        #play-btn {
+            background: white;
+            color: #ff758c;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="intro-overlay">
+        <div class="intro-content">
+            <h2>স্বাগতম!</h2>
+            <p>
+                ধন্যবাদ আমাদের ওয়েবসাইটে আসার জন্য! <br><br>
+                আমাদের ওয়েবসাইটটি কারো অপমান বা ছোট করার জন্য তৈরি করা হয়নি। এটি সম্পূর্ণভাবে মজা এবং বিনোদনের উদ্দেশ্যে তৈরি। তাই কেউ এই ওয়েবসাইটকে খারাপভাবে বা নেতিবাচকভাবে দেখবেন না। আমাদের উদ্দেশ্য শুধু হাসি, আনন্দ এবং ভালো সময় উপভোগ করা। ধন্যবাদ!
+            </p>
+            <button class="enter-btn" id="start-button">ভিতরে প্রবেশ করুন</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1>Friends</h1>
+
+        <div class="image-box">
+            <img src="hk.png" alt="Profile">
+        </div>
+
+        <audio id="myAudio" loop preload="auto">
+            <source src="meow-ghop-ghop-ghop.mp3" type="audio/mpeg">
+        </audio>
+
+        <button id="play-btn">
+            <span id="icon">▶</span> <span id="text">Play Music</span>
+        </button>
+    </div>
+
+    <script>
+        // বাটনগুলো ভেরিয়েবলে সেভ করা
+        const introOverlay = document.getElementById('intro-overlay');
+        const startButton = document.getElementById('start-button');
+        const audio = document.getElementById("myAudio");
+        const playBtn = document.getElementById("play-btn");
+        const btnText = document.getElementById("text");
+        const btnIcon = document.getElementById("icon");
+
+        // ১. ভিতরে প্রবেশ করুন বাটনের কাজ
+        startButton.addEventListener('click', function() {
+            introOverlay.classList.add('hidden');
+        });
+
+        // ২. মিউজিক বাটনের কাজ
+        playBtn.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+                btnText.innerText = "Pause Music";
+                btnIcon.innerText = "⏸";
+            } else {
+                audio.pause();
+                btnText.innerText = "Play Music";
+                btnIcon.innerText = "▶";
+            }
+        });
+    </script>
+
+</body>
+</html>
