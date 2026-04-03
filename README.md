@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friends Official Site</title>
+    <title>Friends</title>
+    
+    <link rel="icon" type="image/jpeg" href="rrp.jpg">
+
     <style>
         * {
             box-sizing: border-box;
@@ -19,7 +22,7 @@
             padding: 20px;
             font-family: Arial, sans-serif;
             color: white;
-            /* ব্যাকগ্রাউন্ড কালার */
+            /* ব্যাকগ্রাউন্ড অ্যানিমেশন */
             background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
             background-size: 400% 400%;
             animation: gradientBG 10s ease infinite;
@@ -41,6 +44,7 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             text-align: center;
             margin: 20px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .description-container p {
@@ -56,16 +60,16 @@
             text-transform: uppercase;
         }
 
-        /* ছবির ডিজাইন (চারকোণা রাখার জন্য) */
+        /* প্রোফাইল ছবির ফ্রেম (hk.png এর জন্য) */
         .photo-frame {
-            width: 300px; /* আপনার পছন্দমতো বড় করা হয়েছে */
+            width: 300px;
             margin-bottom: 30px;
         }
 
         img {
             width: 100%;
             height: auto;
-            border-radius: 10px; /* খুব সামান্য গোল কোণা, যা চারকোণা ভাব নষ্ট করবে না */
+            border-radius: 10px; /* চারকোণা ভাব বজায় রাখার জন্য সামান্য রাউন্ড */
             border: 6px solid white;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             animation: floating 3s ease-in-out infinite;
@@ -76,7 +80,7 @@
             50% { transform: translateY(-12px); }
         }
 
-        /* মিউজিক বাটন */
+        /* প্লে মিউজিক বাটন */
         .play-music-btn {
             background: white;
             color: #ff758c;
@@ -90,6 +94,11 @@
             align-items: center;
             gap: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .play-music-btn:active {
+            transform: scale(0.95);
         }
     </style>
 </head>
