@@ -1,4 +1,3 @@
-<img src="hk.png" alt="Description">
 <img src="hk.png" alt="Description" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!DOCTYPE html>
