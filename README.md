@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Friends</title>
     
-    <link rel="icon" type="image/jpeg" href="rrp.jpg">
+    <link rel="icon" type="image/jpeg" href="rrp.jpg?v=5.0">
 
     <style>
         :root {
@@ -33,6 +33,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             min-height: 100vh;
             padding: 20px;
             font-family: 'Segoe UI', Tahoma, sans-serif;
@@ -63,19 +64,18 @@
 
         .description-container {
             max-width: 550px;
-            width: 95%;
+            width: 90%;
             background: var(--box-bg);
             backdrop-filter: blur(12px);
             padding: 20px;
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             text-align: center;
-            margin-top: 60px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .description-container p {
-            font-size: 15px;
+            font-size: 14px;
             line-height: 1.6;
             color: var(--text-color);
             font-weight: 500;
@@ -85,12 +85,11 @@
             font-size: 2.5rem;
             margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 3px;
         }
 
         .photo-frame {
             width: 320px;
-            max-width: 90%;
+            max-width: 85%;
             margin-bottom: 30px;
         }
 
@@ -122,16 +121,6 @@
             gap: 12px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
-
-        .play-music-btn:active {
-            transform: scale(0.95);
-        }
-
-        /* পিসি এবং বড় স্ক্রিনের জন্য অ্যাডজাস্টমেন্ট */
-        @media (min-width: 768px) {
-            h1 { font-size: 3rem; }
-            .description-container p { font-size: 17px; }
-        }
     </style>
 </head>
 <body>
@@ -139,20 +128,17 @@
     <div class="theme-switch" onclick="toggleTheme()" id="themeIcon">🌙</div>
 
     <div class="description-container">
-        <p>
-            ধন্যবাদ আমাদের ওয়েবসাইটে আসার জন্য! <br>
-            আমাদের ওয়েবসাইটটি কারো অপমান বা ছোট করার জন্য তৈরি করা হয়নি। এটি সম্পূর্ণভাবে মজা এবং বিনোদনের উদ্দেশ্যে তৈরি। তাই কেউ এই ওয়েবসাইটকে খারাপভাবে বা নেতিবাচকভাবে দেখবেন না। আমাদের উদ্দেশ্য শুধু হাসি, আনন্দ এবং ভালো সময় উপভোগ করা। ধন্যবাদ!
-        </p>
+        <p>ধন্যবাদ আমাদের ওয়েবসাইটে আসার জন্য! আমাদের ওয়েবসাইটটি কারো অপমান বা ছোট করার জন্য তৈরি করা হয়নি। এটি সম্পূর্ণভাবে মজা এবং বিনোদনের উদ্দেশ্যে তৈরি।</p>
     </div>
 
     <h1>Friends</h1>
 
     <div class="photo-frame">
-        <img src="nk.jpg" alt="Profile Image" class="profile-img">
+        <img src="nk.jpg?v=1" alt="Profile Image" class="profile-img">
     </div>
 
     <audio id="bgMusic" loop>
-        <source src="cid.mp3" type="audio/mpeg">
+        <source src="cid.mp3?v=1" type="audio/mpeg">
     </audio>
 
     <button class="play-music-btn" onclick="playPause()">
@@ -176,7 +162,6 @@
             const audio = document.getElementById("bgMusic");
             const txt = document.getElementById("btnText");
             const icon = document.getElementById("btnIcon");
-            
             if (audio.paused) {
                 audio.play();
                 txt.innerText = "Pause Music";
@@ -188,6 +173,5 @@
             }
         }
     </script>
-
 </body>
 </html>
